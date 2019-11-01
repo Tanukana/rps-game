@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Tanukana RSP Game</title>
+  </head>
+  <body>
+    <script src="script.js">
+        const choice = prompt('Rock, Paper, or Scissor?: ');
+        const cpuSelect = computerPlay()
+        const plyrSelect = lowerCaseAns(choice);
+
+        
+        function lowerCaseAns(x) {
+            var converter = x.toLowerCase();
+            return converter;
+        }
+
+        function computerPlay() {
+            let randomNum = Math.floor((Math.random() * 3) + 1);
+            if(randomNum === 1) {
+                return 'rock';
+            } else if (randomNum === 2) {
+                return 'paper';
+            } 
+                return 'scissor';
+        }
+
+        function playRound(plyrSelect, cpuSelect) {
+            if(plyrSelect === cpuSelect) {
+                return 'It\'s a tie!';
+            } else if(plyrSelect === 'rock' && cpuSelect === 'paper') {
+                return `You lose! ${cpuSelect} beats ${plyrSelect}!`;
+            } else if(plyrSelect === 'paper' && cpuSelect === 'scissor') {
+                return `You lose! ${cpuSelect} beats ${plyrSelect}!`;
+            } else if(plyrSelect === 'scissor' && cpuSelect === 'rock') {
+                return `You lose! ${cpuSelect} beats ${plyrSelect}!`;
+            } else {
+                return `You win! ${plyrSelect} beats ${cpuSelect}!`;
+            }
+        }
+
+        switch(choice) {
+            case 'rock':
+            case 'paper':
+            case 'scissor':
+            console.log(playRound(plyrSelect, cpuSelect));
+            break;
+
+            default:
+            alert(' Please enter a valid option! ');
+        }
+
+    </script>
+  </body>
+</html>
