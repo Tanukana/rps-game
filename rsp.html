@@ -7,22 +7,22 @@
   </head>
   <body>
     <script src="script.js">
-     // prompting for player choice and assigning choices
-     var choice = prompt('Rock, Paper, or Scissor?: ');
-     var cpuSelect = computerPlay();
-     var plyrSelect = lowerCaseAns(choice);
+    // prompting for player choice and assigning choices
+        var choice = prompt('Rock, Paper, or Scissor?: ');
+        var cpuSelect = computerPlay();
+        var plyrSelect = lowerCaseAns(choice);
     // Score tracker
-     var win = 0;
-     var lose = 0;
-     var round = 0;
+        var win = 0;
+        var lose = 0;
+        var round = 0;
 
-        // Repeating prompt and outcome
+    // Repeating prompt and outcome
         function repeat() {
           for(i = 1; i <= 4; i++) {
           playAgain();
           }
     }
-        // replay function of entire game
+    // replay function of entire game
         function playAgain() {
           var choice2 = prompt('Rock, Paper, or Scissor?: ');
           var newCpuSelect = computerPlay();
@@ -34,13 +34,13 @@
         }
     }
 
-        // converting player input to lower case for case sensitivity in input
+    // converting player input to lower case for case sensitivity in input
         function lowerCaseAns(x) {
             var converter = x.toLowerCase();
             return converter;
-        }
+    }
 
-        // Randomly generate a number between 1-3 and assigning options to each
+    // Randomly generate a number between 1-3 and assigning options to each
         function computerPlay() {
             var randomNum = Math.floor((Math.random() * 3) + 1);
             if(randomNum === 1) {
@@ -49,9 +49,9 @@
                 return 'paper';
             } 
                 return 'scissor';
-        }
+    }
 
-        // Game mechanics and outcomes
+    // Game mechanics and outcomes
         function game(plyrSelect, cpuSelect) {
             if(plyrSelect === cpuSelect) {
                 round += 1;
@@ -73,14 +73,14 @@
                 win += 1;
                 return `${round}/5 | W:${win} L${lose} - You win! ${plyrSelect} beats ${cpuSelect}!`;
             }
-        }
-        // Checking first prompt input
+    }
+    // Checking first prompt input
         if(choice === 'rock' || choice === 'paper' || choice === 'scissor') {
-            console.log(game(choice, cpuSelect));
-            repeat();
-        } else {
-          alert(' Please enter a valid option! ');
-        }
+                console.log(game(choice, cpuSelect));
+                repeat();
+            } else {
+                alert(' Please enter a valid option! ');
+    }
 
     </script>
   </body>
