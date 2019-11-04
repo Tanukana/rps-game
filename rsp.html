@@ -22,13 +22,13 @@
           playAgain();
           }
     }
-        // Prompt and outcome of match
+        // replay function of entire game
         function playAgain() {
-          var xo = prompt('Rock, Paper, or Scissor?: ');
-          var ho = computerPlay();
-          var oh = lowerCaseAns(xo);
-          if(oh === 'rock' || oh === 'paper' || oh === 'scissor') {
-            console.log(game(oh, ho));
+          var choice2 = prompt('Rock, Paper, or Scissor?: ');
+          var newCpuSelect = computerPlay();
+          var lwrCaseChoice = lowerCaseAns(choice2);
+          if(lwrCaseChoice === 'rock' || lwrCaseChoice === 'paper' || lwrCaseChoice === 'scissor') {
+            console.log(game(lwrCaseChoice, newCpuSelect));
         } else {
             alert(' Please enter a valid option! ');
         }
@@ -74,6 +74,7 @@
                 return `${round}/5 | W:${win} L${lose} - You win! ${plyrSelect} beats ${cpuSelect}!`;
             }
         }
+        // Checking first prompt input
         if(choice === 'rock' || choice === 'paper' || choice === 'scissor') {
             console.log(game(choice, cpuSelect));
             repeat();
